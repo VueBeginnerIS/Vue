@@ -12,7 +12,7 @@
             <div class="col-6">
               <div class="box">
                 <h5>JS</h5>
-                  <highlight-code lang="JavaScript" >{{ ex1js }}</highlight-code>
+                  <highlight-code lang="JavaScript">{{ ex1js }}</highlight-code>
               </div> 
             </div>
           </div>
@@ -36,7 +36,7 @@
             <div class="col-6">
               <div class="box">
                 <h5>JS</h5>
-                  <highlight-code lang="JavaScript" >{{ ex1js }}</highlight-code>
+                  <highlight-code lang="JavaScript">{{ ex1js }}</highlight-code>
               </div> 
             </div>
           </div>
