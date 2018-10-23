@@ -15,8 +15,8 @@
 
 
 <style >
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-  @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
+  @import "https://fonts.googleapis.com/css?family=Kanit:300&amp;subset=thai";
+  @import "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css";
   @import "https://use.fontawesome.com/releases/v5.3.1/css/all.css";
   @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
 
@@ -28,6 +28,8 @@ body {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
 body, html {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
     <div id="html" class="skill">
         <section id="head">
@@ -116,3 +117,5 @@ highlight-code{
 
 </style>
 
+=======
+>>>>>>> 244ad3ca74af42380df9f634060ec68b9231d434
