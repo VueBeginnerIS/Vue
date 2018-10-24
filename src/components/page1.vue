@@ -16,9 +16,6 @@
                   <highlight-code lang="JavaScript" >{{ ex1js }}</highlight-code>
               </div> 
             </div>
-            <h5>HTML</h5>
-            <highlight-code lang="HTML">{{ ex1html }}</highlight-code>
->>>>>>> 729868c807c67a63f6d6dd212efabd8e23972ece
           </div>
         </div>
         <div class="col-6">
