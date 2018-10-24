@@ -35,7 +35,7 @@
         </section>
 
         <section id="head">
-            <h2 v-pre class="text-center">v<span>-</span>model</h2>
+            <h2 v-pre class="text-center">v<span>-</span>if</h2>
             <div class="box">
                 <h5>output</h5>
                 <div class="output text-center">

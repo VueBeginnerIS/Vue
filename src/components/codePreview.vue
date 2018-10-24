@@ -347,6 +347,116 @@ export default {
   }
 });`,
     }
+  },
+  page4:{
+      1:{
+          html:`<div id="app">
+    <h1>{{number}}</h1>
+    <button type="submit" v-on:click="number+=10">+</button>
+    <button type="submit" v-on:click="number-=10">-</button>
+</div>`,
+js:`var app = new Vue({
+  el: "#app",
+  data: {
+    number: 0
+  }
+});`,
+      },
+      2:{
+          html:`<div id="app">
+    <h5>Show Text</h5>
+    <button type="submit" @click="showTitle">click</button>
+    <p v-if="show">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+        of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+        like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>`,
+js:`var app = new Vue({
+  el: "#app",
+  data: {
+    show: false
+  },
+  methods: {
+    showTitle() {
+      if (this.show) {
+        this.show = false;
+      } else {
+        this.show = true;
+      }
+    }
+  }
+});`,
+      },
+      3:{
+          html:`<div id="app">
+    <div :style="styleObjectBox">
+        <h5>output</h5>
+        <div :style="styleObjectOutput">
+            <h3>Click to change style</h3>
+            <button type="submit" @click="changeTURBO">TURBO</button>
+            <button type="submit" @click="changeJELLY">QUINCE JELLY</button>
+            <button type="submit" @click="changePINK">CARMINE PINK</button>
+            <button type="submit" @click="changeBLUE">BLUE</button>
+            <button type="submit" @click="changeBLURPLE">BLURPLE</button>
+        </div>
+    </div>
+</div>`,
+js:`var app = new Vue({
+  el: "#app",
+  data: {
+    styleObjectBox: {
+      display: "block",
+      background: "#e7e9db",
+      "border-radius": "10px",
+      color: "#35495e",
+      padding: "15px 15px 00px 15px",
+      "box-shadow": "3px 6px 15px rgb(78, 94, 112)"
+    },
+    styleObjectOutput: {
+      display: "block",
+      background: "whitesmoke",
+      "border-radius": "10px",
+      color: "#4f424c",
+      padding: "0.5em",
+      "margin-bottom": "15px"
+    }
+  },
+  methods: {
+    changeTURBO() {
+      this.styleObjectBox.background = "#535c68";
+      this.styleObjectBox.color = "whitesmoke";
+      this.styleObjectOutput.background = "#95afc0";
+      this.styleObjectOutput.color = "#whitesmoke";
+    },
+    changeJELLY() {
+      this.styleObjectBox.background = "#f0932b";
+      this.styleObjectBox.color = "whitesmoke";
+      this.styleObjectOutput.background = "#ffbe76";
+      this.styleObjectOutput.color = "#whitesmoke";
+    },
+    changePINK() {
+      this.styleObjectBox.background = "#eb4d4b";
+      this.styleObjectBox.color = "whitesmoke";
+      this.styleObjectOutput.background = "#ff7979";
+      this.styleObjectOutput.color = "#whitesmoke";
+    },
+    changeBLUE() {
+      this.styleObjectBox.background = "#22a6b3";
+      this.styleObjectBox.color = "whitesmoke";
+      this.styleObjectOutput.background = "#7ed6df";
+      this.styleObjectOutput.color = "#whitesmoke";
+    },
+    changeBLURPLE() {
+      this.styleObjectBox.background = "#4834d4";
+      this.styleObjectBox.color = "whitesmoke";
+      this.styleObjectOutput.background = "#686de0";
+      this.styleObjectOutput.color = "whitesmoke";
+    }
+  }
+});`,
+      }
   }
 };
 </script>
