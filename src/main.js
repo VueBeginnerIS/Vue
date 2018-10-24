@@ -11,6 +11,7 @@ Vue.use(VeeValidate);
 Vue.config.productionTip = false
 
 import './assets/lib/styles/paraiso-light.css';
+// import 'highlight.js/styles/agate.css';
 new Vue({
   router,
   render: h => h(App)

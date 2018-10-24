@@ -7,6 +7,7 @@
               <div class="box">
                 <h5>HTML</h5>
                   <highlight-code lang="HTML">{{ ex1html }}</highlight-code>
+                  <a href="2.html" style="text-align:center">go</a>
               </div> 
             </div>
             <div class="col-6">
