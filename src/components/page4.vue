@@ -1,135 +1,158 @@
 <template>
-    <div>
-        <transition name="alert-in" enter-active-class="animated flipInX" leave-active-class="animated flipOutX">
-            <section id="message" v-if="show">
-                <div class="card text-white bg-dark">
-                <div class="card-header">
-                    <span v-pre>v-if</span>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">output</h5>
-                    <p class="card-text" v-if="condition > 0.5">Hello Vue</p>
-                    <p class="card-text">condition : {{condition}}</p>
-                </div>
-                </div> 
-            </section>
+  <div class="input" >
+
+    <section id="message">
+        <div :class="classMe">
+          <div class="card-header">
+            <span v-pre> v-on:click </span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">output</h5>
+            <h5 class="card-title text-center"> {{number}}</h5>
+            <div class="text-center">
+            <button type="submit" class="btn btn-light mx-2" @click="number+=10">+</button>
+            <button type="submit" class="btn btn-light" @click="number-=10">-</button>
+            </div>
+          </div>
+        </div> 
+      </section>
+
+      <section id="message">
+        <div :class="classMe">
+          <div class="card-header">
+            <span v-pre> v-on:click </span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">output</h5>
+            <h5 class="card-title text-center">Show Text</h5>
+            <div class="text-center">
+            <button type="submit" class="btn btn-light" @click="showTitle">
+              <i :class="icon"></i>
+              </button>
+            </div>
+          </div>
+        </div>   
+        <transition name="alert-in" enter-active-class="animated bounceInDown" leave-active-class="animated hinge">
+          <div class="card-body text-white bg-dark" v-show="show">
+            <p class="card-title pt-4 px-3"  v-text="lorem"></p>
+          </div>
         </transition>
+           
 
-        <section id="message">
-            <div class="card text-white bg-dark">
-            <div class="card-header">
-                <span v-pre>v-if</span>
+      </section>
+      
+     <section id="message">
+        <div :class="classMe">  
+          <div class="card-header">
+            <span v-pre> v-on:click </span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">output</h5>
+            <h5 class="card-title text-center">Alert</h5>
+            <div class="text-center">
+            <button type="submit" class="btn btn-light mx-2" @click="say('Hello Vue')">Say Hello Vue</button>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">output</h5>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-light" @click="toggle">Toggle</button>
-                    </div>
+          </div>
+        </div> 
+      </section>
+
+      <section id="message">
+        <div :class="classMe">
+          <div class="card-header">
+            <span v-pre> v-on:click </span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">output</h5>
+            <h5 class="card-title text-center">Click to change style</h5>
+            <div class="text-center">
+            <button type="submit" class="btn btn-light mx-2" @click="changeBgWhite">Light</button>
+            <button type="submit" class="btn btn-dark mx-2" @click="changeBgDark">Dark</button>
+            <button type="submit" class="btn btn-danger mx-2" @click="changeBgDanger">Danger</button>
+            <button type="submit" class="btn btn-warning mx-2" @click="changeBgWarning">Warning</button>
+            <button type="submit" class="btn btn-info mx-2" @click="changeBgInfo">Info</button>
             </div>
-            </div> 
-        </section>
+          </div>
+        </div> 
+      </section>
 
-        <section id="message">
-            <div class="card text-white bg-dark">
-            <div class="card-header">
-                <span v-pre>v-if</span>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">output</h5>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">CSS Framework</label>
-                    </div>
-                    <select class="custom-select" id="inputGroupSelect01" v-model="type">
-                        <option value="bootstrap">Bootstrap</option>
-                        <option value="bulma">Bulma css</option>
-                        <option value="vuetify">Vuetify</option>
-                        
-                    </select>
-                </div>
-                    <div v-if="type === 'bootstrap'">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="../assets/bootstrap.png" alt="" width="200px">
-                            </div>
-                            <div class="col-9">
-                                <p class="card-text">Build responsive, mobile-first projects on the web with the world's most popular front-end component library.</p>
-                                <p class="card-text">Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div v-else-if="type === 'bulma'">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="../assets/bulma.png" alt="" width="200px">
-                            </div>
-                            <div class="col-9">
-                                <p class="card-text">Bulma is an open source CSS framework based on Flexbox and used by more than 100,000 developers.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-else-if="type === 'vuetify'">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="../assets/vuetify.png" alt="" width="200px">
-                            </div>
-                            <div class="col-9">
-                                <p class="card-text">Vuetify is a progressive framework that attempts to push web development to the next level. In order to best accomplish this task, some sacrifices had to be made in terms of support for older versions of Internet Explorer. This is not an exhaustive list of compatible browsers, but the main targeted ones.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-else>
-                        <p class="card-text">Select CSS Framework</p>
-                    </div>
-            </div>
-            </div> 
-        </section>
+      
 
-
-
-    </div>
+  </div>
 </template>
 
 <script>
- export default {
-     name: "Page4",
-     data(){
-         return{
-             condition: Math.random(),
-             show:true,
-             type:'',
-             
-         }
-     },
-     computed:{
+  
+  export default {
+    
+      data(){
+        return{
+          number:0,
+          lorem:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          show: false,
+          icon:"fas fa-angle-down",
+          classMe:'card text-white bg-dark'
+        }
+      },
+      methods:{
+        showTitle(){
+          if (this.show){
+            this.show = false;
+            this.icon = "fas fa-angle-down";
+          }else{
+            this.show = true;
+            this.icon = "fas fa-angle-up";
+          }
+        },
+        say(message){
+          alert(message)
+          
+        },
+        changeBgWhite(){
+          this.classMe ='card text-drak bg-light';
+        },
+        changeBgDark(){
+          this.classMe ='card text-light bg-dark';
+        },
+        changeBgDanger(){
+          this.classMe ='card text-light bg-danger';
+        },
+        changeBgWarning(){
+          this.classMe ='card text-dark bg-warning';
+        },
+        changeBgInfo(){
+          this.classMe ='card text-light bg-info';
+        },
+
+      }
+  }
         
-     },
-     methods:{
-         toggle(){
-             if (this.show) {
-                 return this.show = false;
-             } else {
-                 return this.show = true;
-             }
-             
-         }
-     }
- }
 </script>
 
-<style scoped>
+
+
+<style  scoped>
 
 section {
   padding: 6em;
   align-items: center;
 }
 
+
 .container {
   box-shadow: 0px 0px 40px lightgray;
 }
 
-</style>
- 
+input {
+  width: 100%;
+  border: 0;
+  padding: 20px;
+  font-size: 1.3em;
+  background-color: #323333;
+  color: #687f7f;
+}
 
- 
+
+</style>
+
+
+

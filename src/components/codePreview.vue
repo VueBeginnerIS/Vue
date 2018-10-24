@@ -1,31 +1,31 @@
 <script>
 export default {
-    page1:{
-        1:{
-            html:`<div id="app">
+  page1: {
+    1: {
+      html: `<div id="app">
     <p>{{message}}</p>
 </div> `,
-            js:`var app = new Vue({
+      js: `var app = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!',
   }
-})`,
-        },
-        2:{
-            html:`<div id="app">
+})`
+    },
+    2: {
+      html: `<div id="app">
     <input type="text" placeholder="input Value" v-model="inputA">
     <p>the value of the input is: {{ input }}</p>
 </div>`,
-            js:`var app = new Vue({
+      js: `var app = new Vue({
   el: '#app',
   data: {
     input: '',
   }
 })`
-        },
-        3:{
-            html:`<div id="app">
+    },
+    3: {
+      html: `<div id="app">
     <section id="head">
         <h2 v-pre class="text-center">Example</h2>
         <div class="box">
@@ -95,7 +95,7 @@ export default {
          </div>
      </section>
 </div>`,
-            js:`var app = new Vue({
+      js: `var app = new Vue({
     el: '#app',
     data: {
         name: "Noppadon Jannok",
@@ -121,11 +121,232 @@ export default {
         }
     },
 })`
-        }
-    },
-
-    page2:{
-
     }
-}
+  },
+
+  page2: {
+    1: {
+      html: `<div id="app">
+    <ul>
+        <li v-for="task in tasks" 
+        :key="task.index" 
+        v-text="task.description"
+        ></li>
+    </ul>
+</div>`,
+      js: `var app = new Vue({
+  el: "#app",
+  data: {
+    tasks: [
+      { description: "Go to the store", completed: true },
+      { description: "Finish screencast", completed: false },
+      { description: "Make donation", completed: false },
+      { description: "clear inbox", completed: false },
+      { description: "Make dinner", completed: false },
+      { description: "Clean room", completed: true }
+    ]
+  }
+});`
+    },
+    2: {
+      html: `<div id="app">
+    <h5>output</h5>
+    <div class="output">
+        <div class="btn-group float-right" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" @click="showAll">All Task</button>
+            <button type="button" class="btn btn-secondary" @click="showCom">Incompleted Task</button>
+            <button type="button" class="btn btn-secondary" @click="showIncom">Incompleted Task</button>
+        </div>
+        <h5 class="card-title pl-4">{{taskname}}</h5>
+        <div class="row">
+            <div class="col-4">
+                <ul>
+                    <li v-for="task in tasks" :key="task.index" v-show="all" v-text="task.description"></li>
+                    <li v-for="task in tasks" :key="task.index" v-show="com" v-if="task.completed" v-text="task.description"></li>
+                    <li v-for="task in tasks" :key="task.index" v-show="incom" v-if="!task.completed" v-text="task.description"></li>
+
+                </ul>
+            </div>
+            <div class="col-3" id="com">
+                <ul>
+                    <li v-for="task in tasks" :key="task.index" v-show="all" v-text="task.completed"></li>
+                    <li v-for="task in tasks" :key="task.index" v-show="com" v-if="task.completed" v-text="task.completed"></li>
+                    <li v-for="task in tasks" :key="task.index" v-show="incom" v-if="!task.completed" v-text="task.completed"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="output">
+        <h5 class="card-title pl-4">Input New Task</h5>
+        <input type="text" class="form-control" placeholder="Add task description" v-model="newTask">
+        <div class="custom-control custom-checkbox mr-sm-2 m-2">
+            <input type="checkbox" class="custom-control-input" id="customControlAutosizing" v-model="newcompleted">
+            <label class="custom-control-label" for="customControlAutosizing">Completed is true</label>
+        </div>
+        <div class="text-right">
+
+            <button class="btn btn-outline-secondary" type="button" @click="addTask">Add</button>
+
+        </div>
+
+    </div>
+</div>`,
+      js: `var app = new Vue({
+  el: "#app",
+  data: {
+    taskname: "All Task",
+    tasks: [
+      { description: "Go to the store", completed: true },
+
+      { description: "Finish screencast", completed: false },
+
+      { description: "Make donation", completed: false },
+
+      { description: "clear inbox", completed: false },
+
+      { description: "Make dinner", completed: false },
+
+      { description: "Clean room", completed: true }
+    ],
+    newcompleted: true,
+    newTask: "",
+    all: true,
+    com: false,
+    incom: false
+  },
+  methods: {
+    showAll() {
+      if (this.all) {
+      } else {
+        this.all = true;
+        this.com = false;
+        this.incom = false;
+        this.taskname = "All Task";
+      }
+    },
+    showCom() {
+      if (this.com) {
+      } else {
+        this.all = false;
+        this.com = true;
+        this.incom = false;
+        this.taskname = "Completed Task";
+      }
+    },
+    showIncom() {
+      if (this.incom) {
+      } else {
+        this.all = false;
+        this.com = false;
+        this.incom = true;
+        this.taskname = "Incompleted Task";
+      }
+    },
+    addTask() {
+      this.tasks.push({
+        description: this.newTask,
+        completed: this.newcompleted
+      });
+      this.newTask = "";
+    }
+  }
+});`
+    }
+  },
+  page3: {
+    1: {
+      html: `<div id="app">
+    <h1 v-if="condition > 0.5">Hello <span>Vue</span></h1>
+    <p>condition : {{condition}}</p>
+    <button type="submit" @click="con">Toggle</button>
+</div>`,
+      js: `var app = new Vue({
+  el: "#app",
+  data: {
+    condition: ""
+  },
+  methods: {
+    con() {
+      this.condition = Math.random();
+    }
+  }
+});`
+    },
+    2: {
+      html: `<div id="app">
+    <div>
+        <h3>{{show}}</h3>
+        <button type="submit" @click="showCode">Click</button>
+    </div>
+    <div v-if="showcode">
+        <h5>HTML</h5>
+        <highlight-code>Code html</highlight-code>
+    </div>
+    <div v-if="showcode">
+        <h5>JS</h5>
+        <highlight-code>Code html</highlight-code>
+    </div>
+</div>`,
+      js: `var app = new Vue({
+  el: "#app",
+  data: {
+    show: "Show",
+    showcode: false
+  },
+  methods: {
+    showCode() {
+      if (this.showcode) {
+        this.showcode = false;
+        this.show = "Show";
+      } else {
+        this.showcode = true;
+        this.show = "Hide";
+      }
+    }
+  }
+});`
+    },
+    3:{
+        html:`<div id="app">
+    <label for="inputGroupSelect01">CSS Framework</label>
+    <select id="inputGroupSelect01" v-model="type">
+        <option value="bootstrap">Bootstrap</option>
+        <option value="bulma">Bulma css</option>
+        <option value="vuetify">Vuetify</option>
+    </select>
+    <div v-if="type === 'bootstrap'">
+        <img src="../assets/bootstrap.png" alt="" width="200px">
+        <p class="card-text">Build responsive, mobile-first projects on the web with the
+            world's most popular front-end component library.</p>
+    </div>
+    <div v-else-if="type === 'bulma'">
+        <img src="../assets/bulma.png" alt="" width="160px">
+        <p class="card-text text-center">Bulma is a simple, elegant, and modern CSS framework
+            that a lot of
+            developers prefer over Bootstrap. Personally, I think Bulma has a better design by
+            default, and it also feels more light-weight.</p>
+    </div>
+    <div v-else-if="type === 'vuetify'">
+        <img src="../assets/vuetify.png" alt="" width="150px">
+
+        <p class="card-text text-center">Vuetify is a component framework for Vue.js 2. It aims
+            to provide clean, semantic and reusable components that make building your
+            application a breeze. Vuetify utilizes Google's Material Design design pattern,
+            taking cues from other popular frameworks such as Materialize.css, Material Design
+            Lite, Semantic UI and Bootstrap 4.</p>
+    </div>
+    <div v-else>
+        <p class="card-text">Select CSS Framework</p>
+    </div>
+</div>`,
+        js:`var app = new Vue({
+  el: "#app",
+  data: {
+    type: "",
+  }
+});`,
+    }
+  }
+};
 </script>
