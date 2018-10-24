@@ -1,158 +1,243 @@
 <template>
-  <div class="input" >
-
-    <section id="message">
-        <div :class="classMe">
-          <div class="card-header">
-            <span v-pre> v-on:click </span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">output</h5>
-            <h5 class="card-title text-center"> {{number}}</h5>
-            <div class="text-center">
-            <button type="submit" class="btn btn-light mx-2" @click="number+=10">+</button>
-            <button type="submit" class="btn btn-light" @click="number-=10">-</button>
+    <div class="skill">
+        <section class="head">
+            <h2 v-pre class="text-center">v<span>-</span>if</h2>
+            <div class="row">
+                <div class="col-6">
+                    <div class="box">
+                        <h5>HTML</h5>
+                        <highlight-code lang="HTML">{{ ex1html }}</highlight-code>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="box">
+                        <h5>JS</h5>
+                        <highlight-code lang="JavaScript">{{ ex1js }}</highlight-code>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div> 
-      </section>
-
-      <section id="message">
-        <div :class="classMe">
-          <div class="card-header">
-            <span v-pre> v-on:click </span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">output</h5>
-            <h5 class="card-title text-center">Show Text</h5>
-            <div class="text-center">
-            <button type="submit" class="btn btn-light" @click="showTitle">
-              <i :class="icon"></i>
-              </button>
+            <div class="box mt-4">
+                <h5>output</h5>
+                <div class="output">
+                    <div class="row">
+                        <div class="col">
+                            <transition name="alert-in" enter-active-class="animated tada" leave-active-class="animated bounceOutLeft">
+                                <h1 class="text-center pt-3" v-if="condition > 0.5">Hello <span>Vue</span></h1>
+                            </transition>
+                        </div>
+                        <div class="col text-center my-2">
+                            <p class="card-text">condition : {{condition}}</p>
+                            <button type="submit" class="btn" @click="con">Toggle</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>   
-        <transition name="alert-in" enter-active-class="animated bounceInDown" leave-active-class="animated hinge">
-          <div class="card-body text-white bg-dark" v-show="show">
-            <p class="card-title pt-4 px-3"  v-text="lorem"></p>
-          </div>
-        </transition>
-           
+        </section>
 
-      </section>
-      
-     <section id="message">
-        <div :class="classMe">  
-          <div class="card-header">
-            <span v-pre> v-on:click </span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">output</h5>
-            <h5 class="card-title text-center">Alert</h5>
-            <div class="text-center">
-            <button type="submit" class="btn btn-light mx-2" @click="say('Hello Vue')">Say Hello Vue</button>
+        <section id="head">
+            <h2 v-pre class="text-center">v<span>-</span>if</h2>
+            <div class="box">
+                <h5>output</h5>
+                <div class="output text-center">
+                    <h3 class="m-3">{{show}}</h3>
+                    <button type="submit" class="btn mb-2" @click="showCode">Click</button>
+                </div>
             </div>
-          </div>
-        </div> 
-      </section>
-
-      <section id="message">
-        <div :class="classMe">
-          <div class="card-header">
-            <span v-pre> v-on:click </span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">output</h5>
-            <h5 class="card-title text-center">Click to change style</h5>
-            <div class="text-center">
-            <button type="submit" class="btn btn-light mx-2" @click="changeBgWhite">Light</button>
-            <button type="submit" class="btn btn-dark mx-2" @click="changeBgDark">Dark</button>
-            <button type="submit" class="btn btn-danger mx-2" @click="changeBgDanger">Danger</button>
-            <button type="submit" class="btn btn-warning mx-2" @click="changeBgWarning">Warning</button>
-            <button type="submit" class="btn btn-info mx-2" @click="changeBgInfo">Info</button>
+            <div class="row mt-4">
+                <transition name="alert-in" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutLeft">
+                    <div class="col-6" v-if="showcode">
+                        <div class="box">
+                            <h5>HTML</h5>
+                            <highlight-code lang="HTML" style="max-height: 312px;">{{ ex2html }}</highlight-code>
+                        </div>
+                    </div>
+                </transition>
+                <transition name="alert-in" enter-active-class="animated bounceInRight" leave-active-class="animated bounceOutRight">
+                    <div class="col-6" v-if="showcode">
+                        <div class="box">
+                            <h5>JS</h5>
+                            <highlight-code lang="JavaScript" style="max-height: 312px;">{{ ex2js }}</highlight-code>
+                        </div>
+                    </div>
+                </transition>
             </div>
-          </div>
-        </div> 
-      </section>
+        </section>
 
-      
+        <section id="head">
+            <h2 v-pre class="text-center">v<span>-</span>else<span>-</span>if & v<span>-</span>else</h2>
+            <div class="row">
+                <div class="col-9">
+                    <div class="box">
+                        <h5>HTML</h5>
+                        <highlight-code lang="HTML">{{ ex3html }}</highlight-code>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="box">
+                        <h5>JS</h5>
+                        <highlight-code lang="JavaScript">{{ ex3js }}</highlight-code>
+                    </div>
+                </div>
+            </div>
+            <div class="box mt-4">
+                <h5>output</h5>
+                <div class="output" style="max-height: 250px;min-height: 250px;">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">CSS Framework</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" v-model="type">
+                            <option value="bootstrap">Bootstrap</option>
+                            <option value="bulma">Bulma css</option>
+                            <option value="vuetify">Vuetify</option>
 
-  </div>
+                        </select>
+                    </div>
+                    <div v-if="type === 'bootstrap'">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="../assets/bootstrap.png" alt="" width="200px">
+                            </div>
+                            <div class="col-9">
+                                <p class="card-text">Build responsive, mobile-first projects on the web with the
+                                    world's most popular front-end component library.</p>
+                                <p class="card-text">Bootstrap is an open source toolkit for developing with HTML, CSS,
+                                    and JS. Quickly prototype your ideas or build your entire app with our Sass
+                                    variables and mixins, responsive grid system, extensive prebuilt components, and
+                                    powerful plugins built on jQuery.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div v-else-if="type === 'bulma'">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="../assets/bulma.png" alt="" width="160px">
+                            </div>
+                            <div class="col-9">
+                                <p class="card-text text-center">Bulma is a simple, elegant, and modern CSS framework
+                                    that a lot of
+                                    developers prefer over Bootstrap. Personally, I think Bulma has a better design by
+                                    default, and it also feels more light-weight.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else-if="type === 'vuetify'">
+                        <div class="row">
+                            <div class="col-2">
+                                <img src="../assets/vuetify.png" alt="" width="150px">
+                            </div>
+                            <div class="col-9">
+                                <p class="card-text text-center">Vuetify is a component framework for Vue.js 2. It aims
+                                    to provide clean, semantic and reusable components that make building your
+                                    application a breeze. Vuetify utilizes Google's Material Design design pattern,
+                                    taking cues from other popular frameworks such as Materialize.css, Material Design
+                                    Lite, Semantic UI and Bootstrap 4.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <p class="card-text">Select CSS Framework</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
 </template>
 
 <script>
-  
-  export default {
-    
-      data(){
-        return{
-          number:0,
-          lorem:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-          show: false,
-          icon:"fas fa-angle-down",
-          classMe:'card text-white bg-dark'
-        }
-      },
-      methods:{
-        showTitle(){
-          if (this.show){
-            this.show = false;
-            this.icon = "fas fa-angle-down";
-          }else{
-            this.show = true;
-            this.icon = "fas fa-angle-up";
-          }
-        },
-        say(message){
-          alert(message)
-          
-        },
-        changeBgWhite(){
-          this.classMe ='card text-drak bg-light';
-        },
-        changeBgDark(){
-          this.classMe ='card text-light bg-dark';
-        },
-        changeBgDanger(){
-          this.classMe ='card text-light bg-danger';
-        },
-        changeBgWarning(){
-          this.classMe ='card text-dark bg-warning';
-        },
-        changeBgInfo(){
-          this.classMe ='card text-light bg-info';
-        },
-
+import codePreview from "@/components/codePreview.vue";
+export default {
+  name: "page1",
+  data() {
+    return {
+      // codePreview
+      ex1html: codePreview.page3[1].html,
+      ex1js: codePreview.page3[1].js,
+      ex2html: codePreview.page3[2].html,
+      ex2js: codePreview.page3[2].js,
+      ex3html: codePreview.page3[3].html,
+      ex3js: codePreview.page3[3].js,
+      // script
+      condition: "",
+      show: "Show",
+      type: "",
+      showcode: false
+    };
+  },
+  computed: {},
+  methods: {
+    con() {
+      this.condition = Math.random();
+    },
+    showCode() {
+      if (this.showcode) {
+        this.showcode = false;
+        this.show = "Show";
+      } else {
+        this.showcode = true;
+        this.show = "Hide";
       }
+    }
   }
-        
+};
 </script>
 
 
-
-<style  scoped>
-
-section {
-  padding: 6em;
+<style scoped>
+.skill .head {
+  padding-left: 8em;
+  padding-right: 8em;
+  padding-top: 9em;
+  padding-bottom: 5em;
   align-items: center;
 }
 
-
-.container {
-  box-shadow: 0px 0px 40px lightgray;
+.skill #head {
+  padding-left: 8em;
+  padding-right: 8em;
+  padding-bottom: 5em;
+  align-items: center;
 }
 
-input {
-  width: 100%;
-  border: 0;
-  padding: 20px;
-  font-size: 1.3em;
-  background-color: #323333;
-  color: #687f7f;
+section h2 {
+  color: #35495e;
+  padding-bottom: 2em;
 }
 
+section h2 span {
+  color: #42b883;
+}
 
+.bgD {
+  background: #35495e;
+}
+
+.box {
+  display: block;
+  overflow-x: auto;
+  background: #e7e9db;
+  border-radius: 10px;
+  color: #35495e;
+  padding: 15px 15px 00px 15px;
+  box-shadow: 3px 6px 15px rgb(78, 94, 112);
+}
+
+.output {
+  display: block;
+  overflow-x: auto;
+  background: whitesmoke;
+  border-radius: 10px;
+  color: #4f424c;
+  padding: 0.5em;
+  margin-bottom: 15px;
+}
+
+.output h5 span,
+.output h1 span {
+  color: #42b883;
+}
 </style>
-
-
-

@@ -55,4 +55,15 @@ nav a {
   font-weight: bold;
   margin-right: 15px;
 }
+
+
+nav a.router-link-exact-active {
+  padding: 10px;
+  text-decoration: none;
+  background: #42B883;
+  border-radius: 3px;
+  color: whitesmoke;
+  font-weight: bold;
+  margin-right: 15px;
+}
 </style>

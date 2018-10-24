@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="skill">
         <section class="head">
           <h2 v-pre class="text-center"><span>{{</span>message<span>}}</span></h2>
@@ -16,136 +17,159 @@
                   <highlight-code lang="JavaScript" >{{ ex1js }}</highlight-code>
               </div> 
             </div>
+=======
+  <div class="skill">
+    <section class="head">
+      <h2 v-pre class="text-center"><span>{{</span>message<span>}}</span></h2>
+      <div class="row">
+        <div class="col-6">
+          <div class="box">
+            <h5>HTML</h5>
+            <highlight-code lang="HTML">{{ ex1html }}</highlight-code>
+>>>>>>> 729868c807c67a63f6d6dd212efabd8e23972ece
           </div>
-          <div class="box mt-4">
-            <h5>output</h5>
-            <div class="output">
-              <h5 class="card-text text-center">{{ message1 }}</h5>
-            </div>
-        </div>  
-      </section>
+        </div>
+        <div class="col-6">
+          <div class="box">
+            <h5>JS</h5>
+            <highlight-code lang="JavaScript">{{ ex1js }}</highlight-code>
+          </div>
+        </div>
+      </div>
+      <div class="box mt-4">
+        <h5>output</h5>
+        <div class="output">
+          <h5 class="card-text text-center">{{ message1 }}</h5>
+        </div>
+      </div>
+    </section>
 
-      <section id="head">
-          <h2 v-pre class="text-center">v<span>-</span>model</h2>
+    <section id="head">
+      <h2 v-pre class="text-center">v<span>-</span>model</h2>
+      <div class="row">
+        <div class="col-6">
+          <div class="box">
+            <h5>HTML</h5>
+            <highlight-code lang="HTML">{{ ex2html }}</highlight-code>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="box">
+            <h5>JS</h5>
+            <highlight-code lang="JavaScript">{{ ex2js }}</highlight-code>
+          </div>
+        </div>
+      </div>
+      <div class="box mt-4">
+        <h5>output</h5>
+        <div class="output">
+          <input type="text" class="form-control mb-3 mt-2" placeholder="input Value" v-model="inputA">
+          <h5 class="card-text text-center">the value of the input is: <span> {{ inputA }} </span></h5>
+        </div>
+      </div>
+    </section>
+
+    <section id="head">
+      <h2 v-pre class="text-center">Example</h2>
+      <div class="box">
+        <h5>output</h5>
+        <div class="output">
           <div class="row">
-            <div class="col-6">
-              <div class="box">
-                <h5>HTML</h5>
-                  <highlight-code lang="HTML">{{ ex2html }}</highlight-code>
-              </div> 
-            </div>
-            <div class="col-6">
-              <div class="box">
-                <h5>JS</h5>
-                  <highlight-code lang="JavaScript" >{{ ex2js }}</highlight-code>
-              </div> 
-            </div>
-          </div>
-          <div class="box mt-4">
-            <h5>output</h5>
-            <div class="output">
-              <input type="text" class="form-control mb-3 mt-2" placeholder="input Value" v-model="inputA">
-              <h5 class="card-text text-center">the value of the input is: <span> {{ inputA }} </span></h5>
-            </div>
-        </div>  
-      </section>
-
-      <section id="head">
-        <h2 v-pre class="text-center">Example</h2>
-        <div class="box">
-          <h5>output</h5>
-            <div class="output">
-              <div class="row">
-                <div class="col">
-                  <h4 class="text-center py-3">Input your detail</h4>
-                  <div class="input-group mb-3 ">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-white bg-dark" id="inputGroup-sizing-default">ชื่อผู้รับ</span>
-                    </div>
-                    <input type="text" class="form-control " aria-label="Default" aria-describedby="inputGroup-sizing-default" v-model="name">
-                  </div>
-
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-white bg-dark" id="inputGroup-sizing-default">ที่อยู่</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" v-model="addess">
-                  </div>
-
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-white bg-dark" id="inputGroup-sizing-default">จังหวัด</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" v-model="province">
-                  </div>
-
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-white bg-dark" id="inputGroup-sizing-default">รหัสไปรษณีย์</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" v-model="Zipcode">
-                  </div>
-
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-white bg-dark" id="inputGroup-sizing-default">เบอร์โทร</span>
-                    </div>
-                    <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" v-model="phone">
-                  </div>
-                  
-                  
+            <div class="col">
+              <h4 class="text-center py-3">Input your detail</h4>
+              <div class="input-group mb-3 ">
+                <div class="input-group-prepend">
+                  <span class="input-group-text text-white bgD" id="inputGroup-sizing-default">ชื่อผู้รับ</span>
                 </div>
-                <div class="col">
-                  <div class="card text-white bg-dark">
-                    <div class="card-body">
-                      <h5 class="card-title text-center">Order Preview</h5>
-                      <h6 class="card-subtitle mb-2 ">ชื่อผู้รับ : {{name}}</h6>
-                      <h6 class="card-subtitle mb-2  pt-3">ที่อยู่ผู้รับ</h6>
-                      <p class="card-text">{{addess+" "+province+" "+Zipcode+" "}}</p>
-                      <h6 class="card-subtitle mb-3 ">หมายเลขโทรศัพท์ : {{phone}}</h6>
-                      <h6 class="card-subtitle mb-2 ">รายการสินค้า</h6>
-                      <ul>
-                        <li  v-for="item in items" :key="item.index">{{item.item+" ราคา "+item.price+" บาท "}}</li>
-                      </ul>
-                      <p class="card-text">ยอดรวมทั้งหมด {{ sum }} บาท</p>
-                      <div class="text-right">
-                        <button type="button" class="btn text-white" style="background:#42b883">Print</button>
-                      </div>
-                    </div>
+                <input type="text" class="form-control " aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                  v-model="name">
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text text-white bgD" id="inputGroup-sizing-default">ที่อยู่</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                  v-model="addess">
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text text-white bgD" id="inputGroup-sizing-default">จังหวัด</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                  v-model="province">
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text text-white bgD" id="inputGroup-sizing-default">รหัสไปรษณีย์</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                  v-model="Zipcode">
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text text-white bgD" id="inputGroup-sizing-default">เบอร์โทร</span>
+                </div>
+                <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                  v-model="phone">
+              </div>
+
+
+            </div>
+            <div class="col">
+              <div class="card text-white bgD">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Order Preview</h5>
+                  <h6 class="card-subtitle mb-2 ">ชื่อผู้รับ : {{name}}</h6>
+                  <h6 class="card-subtitle mb-2  pt-3">ที่อยู่ผู้รับ</h6>
+                  <p class="card-text">{{addess+" "+province+" "+Zipcode+" "}}</p>
+                  <h6 class="card-subtitle mb-3 ">หมายเลขโทรศัพท์ : {{phone}}</h6>
+                  <h6 class="card-subtitle mb-2 ">รายการสินค้า</h6>
+                  <ul>
+                    <li v-for="item in items" :key="item.index">{{item.item+" ราคา "+item.price+" บาท "}}</li>
+                  </ul>
+                  <p class="card-text">ยอดรวมทั้งหมด {{ sum }} บาท</p>
+                  <div class="text-right">
+                    <button type="button" class="btn text-white" style="background:#42b883">Print</button>
                   </div>
                 </div>
               </div>
             </div>
-          
+          </div>
         </div>
 
-        <div class="showcode pt-4">
-            <button type="button" class="btn" @click="show">view Source Code</button>
-            <transition name="alert-in" enter-active-class="animated bounceInDown" leave-active-class="animated bounceOutDown">
+      </div>
+
+      <div class="showcode pt-4">
+        <button type="button" class="btn" @click="show">View Source Code</button>
+        <transition name="alert-in" enter-active-class="animated bounceInDown" leave-active-class="animated bounceOutDown">
           <div class="row mt-3" v-if="showcode">
             <div class="col-6">
               <div class="box">
                 <h5>HTML</h5>
-                  <highlight-code lang="HTML">{{ ex3html }}</highlight-code>
-              </div> 
+                <highlight-code lang="HTML">{{ ex3html }}</highlight-code>
+              </div>
             </div>
             <div class="col-6">
               <div class="box">
                 <h5>JS</h5>
-                  <highlight-code lang="JavaScript" >{{ ex3js }}</highlight-code>
-              </div> 
+                <highlight-code lang="JavaScript">{{ ex3js }}</highlight-code>
+              </div>
             </div>
           </div>
-            </transition>
-        </div>
+        </transition>
+      </div>
 
-      </section>
+    </section>
 
-      
 
-    </div>
 
-    
+  </div>
+
+
 </template>
 
 <script>
@@ -201,7 +225,7 @@ export default {
 </script>
 
 
-<style  scoped>
+<style scoped>
 .skill .head {
   padding-left: 8em;
   padding-right: 8em;
@@ -221,10 +245,13 @@ section h2 {
   color: #35495e;
   padding-bottom: 2em;
 }
+
 section h2 span {
   color: #42b883;
 }
-
+.bgD{
+  background: #35495e;
+}
 .box {
   display: block;
   overflow-x: auto;
@@ -253,4 +280,3 @@ highlight-code {
   max-height: 500px;
 }
 </style>
-

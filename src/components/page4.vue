@@ -1,135 +1,248 @@
 <template>
-    <div>
-        <transition name="alert-in" enter-active-class="animated flipInX" leave-active-class="animated flipOutX">
-            <section id="message" v-if="show">
-                <div class="card text-white bg-dark">
-                <div class="card-header">
-                    <span v-pre>v-if</span>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">output</h5>
-                    <p class="card-text" v-if="condition > 0.5">Hello Vue</p>
-                    <p class="card-text">condition : {{condition}}</p>
-                </div>
-                </div> 
-            </section>
-        </transition>
-
-        <section id="message">
-            <div class="card text-white bg-dark">
-            <div class="card-header">
-                <span v-pre>v-if</span>
+  <div class="skill">
+    <section class="head">
+      <h2 v-pre class="text-center">v<span>-</span>on<span>:click</span></h2>
+      <div class="row">
+        <div class="col-6">
+          <div :style="styleObjectBox">
+            <h5>HTML</h5>
+            <highlight-code lang="HTML">{{ ex1html }}</highlight-code>
+          </div>
+        </div>
+        <div class="col-6">
+          <div :style="styleObjectBox">
+            <h5>JS</h5>
+            <highlight-code lang="JavaScript">{{ ex1js }}</highlight-code>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4" :style="styleObjectBox">
+        <h5>output</h5>
+        <div :style="styleObjectOutput"> 
+          <h1 class="card-text text-center my-2" style="color:#42b883">{{number}}</h1>
+          <div class="text-center">
+          <button type="submit" class="btn mr-2 px-4" @click="number+=10" style="font-size:20px">+</button>
+            <button type="submit" class="btn px-4" @click="number-=10" style="font-size:20px">-</button>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">output</h5>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-light" @click="toggle">Toggle</button>
-                    </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="head">
+      <h2 v-pre class="text-center">@<span>click</span></h2>
+      <div class="row">
+        <div class="col-6">
+          <div :style="styleObjectBox">
+            <h5>HTML</h5>
+            <highlight-code lang="HTML">{{ ex2html }}</highlight-code>
+          </div>
+        </div>
+        <div class="col-6">
+          <div :style="styleObjectBox">
+            <h5>JS</h5>
+            <highlight-code  lang="JavaScript">{{ ex2js }}</highlight-code>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4" :style="styleObjectBox">
+        <h5>output</h5>
+        <div :style="styleObjectOutput">
+          <h5 class="card-title text-center py-3">Show Text</h5>
+            <div class="text-center">
+            <button type="submit" class="btn" @click="showTitle">
+              <i :class="icon"></i>
+              </button>
             </div>
-            </div> 
-        </section>
+        </div>
+      </div>
+      <transition name="alert-in" enter-active-class="animated bounceInDown" leave-active-class="animated hinge">
+      <div class="mt-2" :style="styleObjectBox" v-show="show">
+          <div :style="styleObjectOutput">
+            <p class="card-title px-3"  v-text="lorem"></p>
+          </div>
+      </div>
+      </transition>
+    </section>
 
-        <section id="message">
-            <div class="card text-white bg-dark">
-            <div class="card-header">
-                <span v-pre>v-if</span>
+    <section id="head">
+      <h2 v-pre class="text-center">@<span>click</span></h2>
+      <div class="row">
+        <div class="col-6">
+          <div :style="styleObjectBox">
+            <h5>HTML</h5>
+            <highlight-code lang="HTML">{{ ex3html }}</highlight-code>
+          </div>
+        </div>
+        <div class="col-6">
+          <div :style="styleObjectBox">
+            <h5>JS</h5>
+            <highlight-code lang="JavaScript">{{ ex3js }}</highlight-code>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4" :style="styleObjectBox">
+        <h5>output</h5>
+        <div :style="styleObjectOutput"> 
+            <h3 class="card-title text-center py-2">Click to change style</h3>
+          <div class="text-center m-3">
+            <button type="submit" class="btn text-white mx-2" style="background:#95afc0" @click="changeTURBO">TURBO</button>
+            <button type="submit" class="btn text-white mx-2" style="background:#ffbe76" @click="changeJELLY">QUINCE JELLY</button>
+            <button type="submit" class="btn text-white mx-2" style="background:#ff7979" @click="changePINK">CARMINE PINK</button>
+            <button type="submit" class="btn text-white mx-2" style="background:#7ed6df" @click="changeBLUE">BLUE</button>
+            <button type="submit" class="btn text-white mx-2" style="background:#686de0" @click="changeBLURPLE">BLURPLE</button>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">output</h5>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">CSS Framework</label>
-                    </div>
-                    <select class="custom-select" id="inputGroupSelect01" v-model="type">
-                        <option value="bootstrap">Bootstrap</option>
-                        <option value="bulma">Bulma css</option>
-                        <option value="vuetify">Vuetify</option>
-                        
-                    </select>
-                </div>
-                    <div v-if="type === 'bootstrap'">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="../assets/bootstrap.png" alt="" width="200px">
-                            </div>
-                            <div class="col-9">
-                                <p class="card-text">Build responsive, mobile-first projects on the web with the world's most popular front-end component library.</p>
-                                <p class="card-text">Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div v-else-if="type === 'bulma'">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="../assets/bulma.png" alt="" width="200px">
-                            </div>
-                            <div class="col-9">
-                                <p class="card-text">Bulma is an open source CSS framework based on Flexbox and used by more than 100,000 developers.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-else-if="type === 'vuetify'">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="../assets/vuetify.png" alt="" width="200px">
-                            </div>
-                            <div class="col-9">
-                                <p class="card-text">Vuetify is a progressive framework that attempts to push web development to the next level. In order to best accomplish this task, some sacrifices had to be made in terms of support for older versions of Internet Explorer. This is not an exhaustive list of compatible browsers, but the main targeted ones.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-else>
-                        <p class="card-text">Select CSS Framework</p>
-                    </div>
-            </div>
-            </div> 
-        </section>
+        </div>
+      </div>
+    </section>
 
 
 
-    </div>
+  </div>
+
+
 </template>
 
 <script>
- export default {
-     name: "Page4",
-     data(){
-         return{
-             condition: Math.random(),
-             show:true,
-             type:'',
-             
-         }
-     },
-     computed:{
-        
-     },
-     methods:{
-         toggle(){
-             if (this.show) {
-                 return this.show = false;
-             } else {
-                 return this.show = true;
-             }
-             
-         }
-     }
- }
+import codePreview from "@/components/codePreview.vue";
+export default {
+  name: "page1",
+  data() {
+    return {
+      // codePreview
+      ex1html: codePreview.page4[1].html,
+      ex1js: codePreview.page4[1].js,
+      ex2html: codePreview.page4[2].html,
+      ex2js: codePreview.page4[2].js,
+      ex3html: codePreview.page4[3].html,
+      ex3js: codePreview.page4[3].js,
+      // script
+      number: 0,
+      lorem:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      show: false,
+      icon: "fas fa-angle-down",
+      styleObjectBox: {
+        display: "block",
+        "overflow-x": "auto",
+        background: "#e7e9db",
+        "border-radius": "10px",
+        color: "#35495e",
+        padding: "15px 15px 00px 15px",
+        "box-shadow": "3px 6px 15px rgb(78, 94, 112)"
+      },
+      styleObjectOutput: {
+        display: "block",
+        "overflow-x": "auto",
+        background: "whitesmoke",
+        "border-radius": "10px",
+        color: "#4f424c",
+        padding: "0.5em",
+        "margin-bottom": "15px"
+      }
+    };
+  },
+  computed: {
+  },
+  methods: {
+    showTitle() {
+      if (this.show) {
+        this.show = false;
+        this.icon = "fas fa-angle-down";
+      } else {
+        this.show = true;
+        this.icon = "fas fa-angle-up";
+      }
+    },
+    say(message) {
+      alert(message);
+    },
+    changeTURBO() {
+      this.styleObjectBox.background = "#535c68";
+      this.styleObjectBox.color="whitesmoke";
+      this.styleObjectOutput.background="#95afc0";
+      this.styleObjectOutput.color="#whitesmoke";
+    },
+    changeJELLY() {
+      this.styleObjectBox.background = "#f0932b";
+      this.styleObjectBox.color="whitesmoke";
+      this.styleObjectOutput.background="#ffbe76";
+      this.styleObjectOutput.color="#whitesmoke";
+    },
+    changePINK() {
+      this.styleObjectBox.background = "#eb4d4b";
+      this.styleObjectBox.color="whitesmoke";
+      this.styleObjectOutput.background="#ff7979";
+      this.styleObjectOutput.color="#whitesmoke";
+    },
+    changeBLUE() {
+      this.styleObjectBox.background = "#22a6b3";
+      this.styleObjectBox.color="whitesmoke";
+      this.styleObjectOutput.background="#7ed6df";
+      this.styleObjectOutput.color="#whitesmoke";
+    },
+    changeBLURPLE() {
+      this.styleObjectBox.background = "#4834d4";
+      this.styleObjectBox.color="whitesmoke";
+      this.styleObjectOutput.background="#686de0";
+      this.styleObjectOutput.color="whitesmoke";
+    },
+  }
+};
 </script>
 
-<style scoped>
 
-section {
-  padding: 6em;
+<style scoped>
+.skill .head {
+  padding-left: 8em;
+  padding-right: 8em;
+  padding-top: 9em;
+  padding-bottom: 5em;
   align-items: center;
 }
 
-.container {
-  box-shadow: 0px 0px 40px lightgray;
+.skill #head {
+  padding-left: 8em;
+  padding-right: 8em;
+  padding-bottom: 5em;
+  align-items: center;
 }
 
-</style>
- 
+section h2 {
+  color: #35495e;
+  padding-bottom: 2em;
+}
 
- 
+section h2 span {
+  color: #42b883;
+}
+.bgD {
+  background: #35495e;
+}
+.box {
+  display: block;
+  overflow-x: auto;
+  background: #e7e9db;
+  border-radius: 10px;
+  color: #35495e;
+  padding: 15px 15px 00px 15px;
+  box-shadow: 3px 6px 15px rgb(78, 94, 112);
+}
+
+.output {
+  display: block;
+  overflow-x: auto;
+  background: whitesmoke;
+  border-radius: 10px;
+  color: #4f424c;
+  padding: 0.5em;
+  margin-bottom: 15px;
+}
+
+.output h5 span {
+  color: #42b883;
+}
+
+highlight-code {
+  max-height: 500px;
+}
+</style>
