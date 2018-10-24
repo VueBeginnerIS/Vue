@@ -16,12 +16,6 @@
                   <highlight-code lang="JavaScript" >{{ ex1js }}</highlight-code>
               </div> 
             </div>
-=======
-  <div class="skill">
-    <section class="head">
-      <h2 v-pre class="text-center"><span>{{</span>message<span>}}</span></h2>
-      <div class="row">
-          <div class="box">
             <h5>HTML</h5>
             <highlight-code lang="HTML">{{ ex1html }}</highlight-code>
 >>>>>>> 729868c807c67a63f6d6dd212efabd8e23972ece
