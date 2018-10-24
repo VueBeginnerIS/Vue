@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <div class="skill">
         <section class="head">
           <h2 v-pre class="text-center"><span>{{</span>message<span>}}</span></h2>
@@ -22,7 +21,6 @@
     <section class="head">
       <h2 v-pre class="text-center"><span>{{</span>message<span>}}</span></h2>
       <div class="row">
-        <div class="col-6">
           <div class="box">
             <h5>HTML</h5>
             <highlight-code lang="HTML">{{ ex1html }}</highlight-code>
