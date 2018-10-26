@@ -85,11 +85,13 @@
         <div :style="styleObjectOutput"> 
             <h3 class="card-title text-center py-2">Click to change style</h3>
           <div class="text-center m-3">
-            <button type="submit" class="btn text-white mx-2" style="background:#95afc0" @click="changeTURBO">TURBO</button>
-            <button type="submit" class="btn text-white mx-2" style="background:#ffbe76" @click="changeJELLY">QUINCE JELLY</button>
-            <button type="submit" class="btn text-white mx-2" style="background:#ff7979" @click="changePINK">CARMINE PINK</button>
-            <button type="submit" class="btn text-white mx-2" style="background:#7ed6df" @click="changeBLUE">BLUE</button>
-            <button type="submit" class="btn text-white mx-2" style="background:#686de0" @click="changeBLURPLE">BLURPLE</button>
+            <button type="submit" 
+            class="btn text-white mx-2" 
+            v-for="botton in bottons" 
+            :key="botton.index" 
+            :style="'background:'+botton.stBg"
+            @click="Bt(botton)"
+            >{{botton.nameBt}}</button>
             </div>
         </div>
       </div>
@@ -105,7 +107,7 @@
 <script>
 import codePreview from "@/components/codePreview.vue";
 export default {
-  name: "page1",
+  name: "page4",
   data() {
     return {
       // codePreview
@@ -138,11 +140,17 @@ export default {
         color: "#4f424c",
         padding: "0.5em",
         "margin-bottom": "15px"
-      }
+      },
+      bottons: [
+        { nameBt: "TURBO", stBg: "#95afc0", Bgbox: "#535c68" },
+        { nameBt: "QUINCE JELLY", stBg: "#ffbe76", Bgbox: "#f0932b" },
+        { nameBt: "CARMINE PINK", stBg: "#ff7979", Bgbox: "#eb4d4b" },
+        { nameBt: "BLUE", stBg: "#7ed6df", Bgbox: "#22a6b3" },
+        { nameBt: "BLURPLE", stBg: "#686de0", Bgbox: "#4834d4" }
+      ]
     };
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     showTitle() {
       if (this.show) {
@@ -153,39 +161,14 @@ export default {
         this.icon = "fas fa-angle-up";
       }
     },
-    say(message) {
-      alert(message);
-    },
-    changeTURBO() {
-      this.styleObjectBox.background = "#535c68";
-      this.styleObjectBox.color="whitesmoke";
-      this.styleObjectOutput.background="#95afc0";
-      this.styleObjectOutput.color="#whitesmoke";
-    },
-    changeJELLY() {
-      this.styleObjectBox.background = "#f0932b";
-      this.styleObjectBox.color="whitesmoke";
-      this.styleObjectOutput.background="#ffbe76";
-      this.styleObjectOutput.color="#whitesmoke";
-    },
-    changePINK() {
-      this.styleObjectBox.background = "#eb4d4b";
-      this.styleObjectBox.color="whitesmoke";
-      this.styleObjectOutput.background="#ff7979";
-      this.styleObjectOutput.color="#whitesmoke";
-    },
-    changeBLUE() {
-      this.styleObjectBox.background = "#22a6b3";
-      this.styleObjectBox.color="whitesmoke";
-      this.styleObjectOutput.background="#7ed6df";
-      this.styleObjectOutput.color="#whitesmoke";
-    },
-    changeBLURPLE() {
-      this.styleObjectBox.background = "#4834d4";
-      this.styleObjectBox.color="whitesmoke";
-      this.styleObjectOutput.background="#686de0";
-      this.styleObjectOutput.color="whitesmoke";
-    },
+    Bt(botton) {
+      if (this.styleObjectOutput.background !== botton.stBg) {
+        this.styleObjectBox.background = botton.Bgbox;
+        this.styleObjectBox.color = "whitesmoke";
+        this.styleObjectOutput.background = botton.stBg;
+        this.styleObjectOutput.color = "#whitesmoke";
+      }
+    }
   }
 };
 </script>
@@ -240,9 +223,5 @@ section h2 span {
 
 .output h5 span {
   color: #42b883;
-}
-
-highlight-code {
-  max-height: 500px;
 }
 </style>

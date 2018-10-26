@@ -194,11 +194,7 @@ export default {
   },
   methods: {
     show() {
-      if (this.showcode) {
-        this.showcode = false;
-      } else {
-        this.showcode = true;
-      }
+      this.showcode === true ? (this.showcode = false) : (this.showcode = true);
     }
   }
 };
@@ -229,7 +225,7 @@ section h2 {
 section h2 span {
   color: #42b883;
 }
-.bgD{
+.bgD {
   background: #35495e;
 }
 .box {
@@ -254,9 +250,5 @@ section h2 span {
 
 .output h5 span {
   color: #42b883;
-}
-
-highlight-code {
-  max-height: 500px;
 }
 </style>
