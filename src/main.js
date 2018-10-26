@@ -10,8 +10,11 @@ Vue.use(VueHighlightJS);
 Vue.use(VeeValidate);
 Vue.config.productionTip = false
 
+<<<<<<< HEAD
 // import './assets/lib/styles/paraiso-light.css';
 // import 'highlight.js/styles/agate.css';
+=======
+>>>>>>> 08c39dafabcc39da7b120b2f556ea31bfd7b80d1
 import 'highlight.js/styles/atom-one-light.css';
 
 new Vue({

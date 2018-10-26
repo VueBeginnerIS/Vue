@@ -293,8 +293,6 @@ i {
   float: right;
 }
 
-highlight-code {
-  max-height: 500px;
-}
+
 </style>
 
