@@ -10,8 +10,9 @@ Vue.use(VueHighlightJS);
 Vue.use(VeeValidate);
 Vue.config.productionTip = false
 
-import './assets/lib/styles/paraiso-light.css';
+// import './assets/lib/styles/paraiso-light.css';
 // import 'highlight.js/styles/agate.css';
+import 'highlight.js/styles/atom-one-light.css';
 
 new Vue({
   router,

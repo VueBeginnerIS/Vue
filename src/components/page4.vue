@@ -76,7 +76,7 @@
         <div class="col-6">
           <div :style="styleObjectBox">
             <h5>JS</h5>
-            <highlight-code lang="JavaScript">{{ ex3js }}</highlight-code>
+            <highlight-code lang="JavaScript" style="max-height:500px;">{{ ex3js }}</highlight-code>
           </div>
         </div>
       </div>
@@ -240,9 +240,5 @@ section h2 span {
 
 .output h5 span {
   color: #42b883;
-}
-
-highlight-code {
-  max-height: 500px;
 }
 </style>

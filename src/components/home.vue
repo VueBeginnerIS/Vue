@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="get">
-            <p>Get started with <span> Vue.js </span> to make better</p>
+            <p v-cloak>Get started with <span> Vue.js </span> to make better</p>
         </div>
         
 
@@ -56,4 +56,5 @@
     font-size: 35px;
     color: #42B883;
 }
+
 </style>
