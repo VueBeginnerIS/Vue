@@ -1,21 +1,12 @@
 <template>
-    <div class="skill">
-        <section class="head">
-          <h2 v-pre class="text-center"><span>{{</span>message<span>}}</span></h2>
-          <div class="row">
-            <div class="col-6">
-              <div class="box">
-                <h5>HTML</h5>
-                  <highlight-code lang="HTML">{{ ex1html }}</highlight-code>
-                  <a href="2.html" style="text-align:center">go</a>
-              </div> 
-            </div>
-            <div class="col-6">
-              <div class="box">
-                <h5>JS</h5>
-                  <highlight-code lang="JavaScript" >{{ ex1js }}</highlight-code>
-              </div> 
-            </div>
+  <div class="skill">
+    <section class="head">
+      <h2 v-pre class="text-center"><span>{{</span>message<span>}}</span></h2>
+      <div class="row">
+        <div class="col-6">
+          <div class="box">
+            <h5>HTML</h5>
+            <highlight-code lang="HTML">{{ ex1html }}</highlight-code>
           </div>
         </div>
         <div class="col-6">
@@ -203,7 +194,11 @@ export default {
   },
   methods: {
     show() {
-      this.showcode === true ? (this.showcode = false) : (this.showcode = true);
+      if (this.showcode) {
+        this.showcode = false;
+      } else {
+        this.showcode = true;
+      }
     }
   }
 };
@@ -234,7 +229,7 @@ section h2 {
 section h2 span {
   color: #42b883;
 }
-.bgD {
+.bgD{
   background: #35495e;
 }
 .box {
@@ -259,5 +254,9 @@ section h2 span {
 
 .output h5 span {
   color: #42b883;
+}
+
+highlight-code {
+  max-height: 500px;
 }
 </style>
